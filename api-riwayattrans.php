@@ -7,7 +7,7 @@ if (isset($_GET['id_user']) && isset($_GET['ket'])) {
     $ket = $_GET['ket'];
 
     // Ubah kueri untuk mendapatkan data dari tabel pesanan, detail_pesanan, dan kue
-    $query = "SELECT p.id_user, p.total_harga, p.ket, dp.jumlah_pesan, dp.id_kue, k.nama_kue, k.gambar, k.satuan 
+    $query = "SELECT p.id_user, p.total_harga, p.ket, p.tgl_terima, dp.jumlah_pesan, dp.id_kue, k.nama_kue, k.gambar, k.satuan 
               FROM pesanan p 
               INNER JOIN detail_pesanan dp ON p.id_pesanan = dp.id_pesanan 
               INNER JOIN kue k ON k.id_kue = dp.id_kue 
